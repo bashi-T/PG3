@@ -32,6 +32,7 @@ int main()
 	float resultFloat = Min<float>(114.0f, 51.4f);
 	double resultDouble = Min<double>(15.4f, 114.0f);
 	char resultChar = Min('a', 'b');
+	
 	printf("%d\n", resultInt);
 	printf("%f\n", resultFloat);
 	printf("%lf\n", resultDouble);
