@@ -1,29 +1,61 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<Windows.h>
 
-int Recursive(int n)
+int Remainder(int a,int b)
 {
-	if (n <= 1) {
-		return 1;
-	}
-	return(n * Recursive(n - 1));
+	return a % b;
 }
 
-int RecursiveSalary(int n)
+typedef void (*pFunc)(int*);
+
+void setTimeout(pFunc p, int second,int n)
 {
-	if (n <= 1) {
-		printf("1時間目:100円\n");
-		return 100;
-	}
-	printf("%d時間目:%d円\n", n, (2 * RecursiveSalary(n - 1) - 50));
-	return /*RecursiveSalary(n - 1) + */(2 * RecursiveSalary(n - 1) - 50);
+	printf("結果は%d秒後\n",second);
+	Sleep(second * 1000);
+	p(&n);
+}
+
+void DispResult(int *s)
+{
+	printf("出目：%d\n",*s);
 }
 
 int main()
 {
-	int worktime = 3;
-	printf("一般的な賃金：%d\n", 1072 * worktime);
-	RecursiveSalary(worktime);
-	//printf("再帰的な賃金：%d\n", RecursiveSalary(worktime));
+	srand((unsigned int)time(NULL));
+	pFunc p;
+	int (*calc)(int, int);
+	int DiceNumber = rand() % 6 + 1;
+	int number = 0;
+	calc = Remainder;
 
+
+	printf("丁（偶数・０を入力）か半（奇数・１を入力）か\n");
+	scanf_s("%d", &number);
+	p = DispResult;
+	setTimeout(p, 3, DiceNumber);
+		switch (calc(DiceNumber,2))
+		{
+		case 0:
+			printf("正解は丁!\n");
+			if (number == 0) {
+				printf("正解!\n");
+			}
+			else {
+				printf("不正解......\n");
+			}
+			break;
+		case 1:
+			printf("正解は半!\n");
+			if (number == 1) {
+				printf("正解!\n");
+			}
+			else {
+				printf("不正解......\n");
+			}
+			break;
+		}
 	return 0;
 }
