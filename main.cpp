@@ -1,45 +1,29 @@
 #include<stdio.h>
 
-int calc(int a, int b)
+int Recursive(int n)
 {
-	return a + b;
-}
-float calc(float a, float b)
-{
-	return a + b;
+	if (n <= 1) {
+		return 1;
+	}
+	return(n * Recursive(n - 1));
 }
 
-
-template <typename Type>
-Type Min(Type a, Type b)
+int RecursiveSalary(int n)
 {
-	if (a <= b) {
-		return static_cast<Type>(a);
+	if (n <= 1) {
+		printf("1時間目:100円\n");
+		return 100;
 	}
-	else {
-		return static_cast<Type>(b);
-	}
-}
-template<>
-char Min(char a, char b)
-{
-	return 0;
+	printf("%d時間目:%d円\n", n, (2 * RecursiveSalary(n - 1) - 50));
+	return /*RecursiveSalary(n - 1) + */(2 * RecursiveSalary(n - 1) - 50);
 }
 
 int main()
 {
-	int resultInt = Min<int>(114, 514);
-	float resultFloat = Min<float>(114.0f, 51.4f);
-	double resultDouble = Min<double>(15.4f, 114.0f);
-	char resultChar = Min('a', 'b');
-	
-	printf("%d\n", resultInt);
-	printf("%f\n", resultFloat);
-	printf("%lf\n", resultDouble);
-	if(resultChar==NULL)
-	{
-		printf("数字以外は代入できません");
-	}
+	int worktime = 3;
+	printf("一般的な賃金：%d\n", 1072 * worktime);
+	RecursiveSalary(worktime);
+	//printf("再帰的な賃金：%d\n", RecursiveSalary(worktime));
 
 	return 0;
 }
