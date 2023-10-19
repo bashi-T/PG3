@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<Windows.h>
+#include<functional>
 
 int Remainder(int a,int b)
 {
@@ -26,33 +27,38 @@ int main()
 {
 	srand((unsigned int)time(NULL));
 	pFunc p;
-	int (*calc)(int, int);
 	int DiceNumber = rand() % 6 + 1;
 	int number = 0;
-	calc = Remainder;
-
+	std::function<int(int, int)> Remainder =
+		[](int a, int b) {	return a % b; };
 
 	printf("丁（偶数・０を入力）か半（奇数・１を入力）か\n");
 	scanf_s("%d", &number);
+
 	p = DispResult;
 	setTimeout(p, 3, DiceNumber);
-		switch (calc(DiceNumber,2))
+
+		switch (Remainder(DiceNumber,2))
 		{
 		case 0:
 			printf("正解は丁!\n");
-			if (number == 0) {
+			if (number == 0)
+			{
 				printf("正解!\n");
 			}
-			else {
+			else
+			{
 				printf("不正解......\n");
 			}
 			break;
 		case 1:
 			printf("正解は半!\n");
-			if (number == 1) {
+			if (number == 1)
+			{
 				printf("正解!\n");
 			}
-			else {
+			else
+			{
 				printf("不正解......\n");
 			}
 			break;
