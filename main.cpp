@@ -12,14 +12,14 @@ typedef void (*pFunc)(int*);
 
 void setTimeout(pFunc p, int second,int n)
 {
-	printf("���ʂ�%d�b��\n",second);
+	printf("結果は%d秒後\n",second);
 	Sleep(second * 1000);
 	p(&n);
 }
 
 void DispResult(int *s)
 {
-	printf("�o�ځF%d\n",*s);
+	printf("出目:%d\n",*s);
 }
 
 int main()
@@ -32,28 +32,32 @@ int main()
 	calc = Remainder;
 
 
-	printf("���i����E�O����́j�����i��E�P����́j��\n");
+	printf("さいころの出目が丁なら0,半なら1を入力\n");
 	scanf_s("%d", &number);
 	p = DispResult;
 	setTimeout(p, 3, DiceNumber);
 		switch (calc(DiceNumber,2))
 		{
 		case 0:
-			printf("����͒�!\n");
-			if (number == 0) {
-				printf("����!\n");
+			printf("正解は丁\n");
+			if (number == 0)
+			{
+				printf("正解!\n");
 			}
-			else {
-				printf("�s����......\n");
+			else
+			{
+				printf("不正解......\n");
 			}
 			break;
 		case 1:
-			printf("����͔�!\n");
-			if (number == 1) {
-				printf("����!\n");
+			printf("正解は半!\n");
+			if (number == 1)
+			{
+				printf("正解!\n");
 			}
-			else {
-				printf("�s����......\n");
+			else
+			{
+				printf("不正解......\n");
 			}
 			break;
 		}
