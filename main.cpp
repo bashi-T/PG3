@@ -2,7 +2,8 @@
 
 int Recursive(int n)
 {
-	if (n <= 1) {
+	if (n <= 1)
+	{
 		return 1;
 	}
 	return(n * Recursive(n - 1));
@@ -10,20 +11,21 @@ int Recursive(int n)
 
 int RecursiveSalary(int n)
 {
-	if (n <= 1) {
-		printf("1ŽžŠÔ–Ú:100‰~\n");
+	if (n <= 1)
+	{
+		//printf("1ŽžŠÔ–Ú:100‰~\n");
 		return 100;
 	}
-	printf("%dŽžŠÔ–Ú:%d‰~\n", n, (2 * RecursiveSalary(n - 1) - 50));
-	return /*RecursiveSalary(n - 1) + */(2 * RecursiveSalary(n - 1) - 50);
+	//printf("%dŽžŠÔ–Ú:%d‰~\n", n, (2 * RecursiveSalary(n - 1) - 50));
+	return RecursiveSalary(n - 1) + (2 * RecursiveSalary(n - 1) - 50);
 }
 
 int main()
 {
-	int worktime = 3;
+	int worktime = 2;
 	printf("ˆê”Ê“I‚È’À‹àF%d\n", 1072 * worktime);
-	RecursiveSalary(worktime);
-	//printf("Ä‹A“I‚È’À‹àF%d\n", RecursiveSalary(worktime));
+	//RecursiveSalary(worktime);
+	printf("Ä‹A“I‚È’À‹àF%d\n", RecursiveSalary(worktime));
 
 	return 0;
 }
