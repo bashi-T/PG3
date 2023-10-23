@@ -38,7 +38,7 @@ int main()
 	printf("%lf\n", resultDouble);
 	if(resultChar==NULL)
 	{
-		printf("”šˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ");
+		printf("æ•°å­—ä»¥å¤–ã¯å…¥åŠ›ã§ãã¾ã›ã‚“");
 	}
 
 	return 0;
