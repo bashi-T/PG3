@@ -4,7 +4,15 @@
 #include<Windows.h>
 #include<functional>
 
+class X
+{
+public:
 
+
+protected:
+
+
+};
 
 int main()
 {
