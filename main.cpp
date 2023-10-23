@@ -13,14 +13,14 @@ typedef void (*pFunc)(int*);
 
 void setTimeout(pFunc p, int second,int n)
 {
-	printf("Œ‹‰Ê‚Í%d•bŒã\n",second);
+	printf("çµæœã¯%dç§’å¾Œ\n",second);
 	Sleep(second * 1000);
 	p(&n);
 }
 
 void DispResult(int *s)
 {
-	printf("o–ÚF%d\n",*s);
+	printf("å‡ºç›®:%d\n",*s);
 }
 
 int main()
@@ -32,7 +32,7 @@ int main()
 	std::function<int(int, int)> Remainder =
 		[](int a, int b) {	return a % b; };
 
-	printf("’ši‹ô”E‚O‚ğ“ü—Íj‚©”¼iŠï”E‚P‚ğ“ü—Íj‚©\n");
+	printf("ã•ã„ã“ã‚ã®å‡ºç›®ãŒä¸ãªã‚‰0,åŠãªã‚‰1ã‚’å…¥åŠ›\n");
 	scanf_s("%d", &number);
 
 	p = DispResult;
@@ -41,25 +41,25 @@ int main()
 		switch (Remainder(DiceNumber,2))
 		{
 		case 0:
-			printf("³‰ğ‚Í’š!\n");
+			printf("æ­£è§£ã¯ä¸\n");
 			if (number == 0)
 			{
-				printf("³‰ğ!\n");
+				printf("æ­£è§£!\n");
 			}
 			else
 			{
-				printf("•s³‰ğ......\n");
+				printf("ä¸æ­£è§£......\n");
 			}
 			break;
 		case 1:
-			printf("³‰ğ‚Í”¼!\n");
+			printf("æ­£è§£ã¯åŠ!\n");
 			if (number == 1)
 			{
-				printf("³‰ğ!\n");
+				printf("æ­£è§£!\n");
 			}
 			else
 			{
-				printf("•s³‰ğ......\n");
+				printf("ä¸æ­£è§£......\n");
 			}
 			break;
 		}
