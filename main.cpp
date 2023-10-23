@@ -12,14 +12,14 @@ typedef void (*pFunc)(int*);
 
 void setTimeout(pFunc p, int second,int n)
 {
-	printf("Œ‹‰Ê‚Í%d•bŒã\n",second);
+	printf("ï¿½ï¿½ï¿½Ê‚ï¿½%dï¿½bï¿½ï¿½\n",second);
 	Sleep(second * 1000);
 	p(&n);
 }
 
 void DispResult(int *s)
 {
-	printf("o–ÚF%d\n",*s);
+	printf("ï¿½oï¿½ÚF%d\n",*s);
 }
 
 int main()
@@ -32,28 +32,28 @@ int main()
 	calc = Remainder;
 
 
-	printf("’ši‹ô”E‚O‚ğ“ü—Íj‚©”¼iŠï”E‚P‚ğ“ü—Íj‚©\n");
+	printf("ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½Eï¿½Oï¿½ï¿½ï¿½ï¿½Íjï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï”ï¿½Eï¿½Pï¿½ï¿½ï¿½ï¿½Íjï¿½ï¿½\n");
 	scanf_s("%d", &number);
 	p = DispResult;
 	setTimeout(p, 3, DiceNumber);
 		switch (calc(DiceNumber,2))
 		{
 		case 0:
-			printf("³‰ğ‚Í’š!\n");
+			printf("ï¿½ï¿½ï¿½ï¿½Í’ï¿½!\n");
 			if (number == 0) {
-				printf("³‰ğ!\n");
+				printf("ï¿½ï¿½ï¿½ï¿½!\n");
 			}
 			else {
-				printf("•s³‰ğ......\n");
+				printf("ï¿½sï¿½ï¿½ï¿½ï¿½......\n");
 			}
 			break;
 		case 1:
-			printf("³‰ğ‚Í”¼!\n");
+			printf("ï¿½ï¿½ï¿½ï¿½Í”ï¿½!\n");
 			if (number == 1) {
-				printf("³‰ğ!\n");
+				printf("ï¿½ï¿½ï¿½ï¿½!\n");
 			}
 			else {
-				printf("•s³‰ğ......\n");
+				printf("ï¿½sï¿½ï¿½ï¿½ï¿½......\n");
 			}
 			break;
 		}
