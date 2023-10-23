@@ -13,19 +13,19 @@ int RecursiveSalary(int n)
 {
 	if (n <= 1)
 	{
-		//printf("1ŽžŠÔ–Ú:100‰~\n");
+		//printf("1ï¿½ï¿½ï¿½Ô–ï¿½:100ï¿½~\n");
 		return 100;
 	}
-	//printf("%dŽžŠÔ–Ú:%d‰~\n", n, (2 * RecursiveSalary(n - 1) - 50));
+	//printf("%dï¿½ï¿½ï¿½Ô–ï¿½:%dï¿½~\n", n, (2 * RecursiveSalary(n - 1) - 50));
 	return RecursiveSalary(n - 1) + (2 * RecursiveSalary(n - 1) - 50);
 }
 
 int main()
 {
 	int worktime = 2;
-	printf("ˆê”Ê“I‚È’À‹àF%d\n", 1072 * worktime);
+	printf("ï¿½ï¿½Ê“Iï¿½È’ï¿½ï¿½ï¿½F%d\n", 1072 * worktime);
 	//RecursiveSalary(worktime);
-	printf("Ä‹A“I‚È’À‹àF%d\n", RecursiveSalary(worktime));
+	printf("ï¿½Ä‹Aï¿½Iï¿½È’ï¿½ï¿½ï¿½F%d\n", RecursiveSalary(worktime));
 
 	return 0;
 }
