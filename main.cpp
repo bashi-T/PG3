@@ -13,19 +13,22 @@ int RecursiveSalary(int n)
 {
 	if (n <= 1)
 	{
-		//printf("1���Ԗ�:100�~\n");
 		return 100;
 	}
-	//printf("%d���Ԗ�:%d�~\n", n, (2 * RecursiveSalary(n - 1) - 50));
-	return RecursiveSalary(n - 1) + (2 * RecursiveSalary(n - 1) - 50);
+	return(2 * RecursiveSalary(n - 1) - 50);
 }
 
 int main()
 {
-	int worktime = 2;
-	printf("��ʓI�Ȓ���F%d\n", 1072 * worktime);
+	int worktime = 10;
+	printf("一般的な賃金:%d\n", 1072 * worktime);
 	//RecursiveSalary(worktime);
-	printf("�ċA�I�Ȓ���F%d\n", RecursiveSalary(worktime));
+	printf("再帰的な賃金\n");
+	for (int i = 1; i <= worktime; i++)
+	{
+		printf("%d時間目:%d\n",i, RecursiveSalary(i));
+	}
+
 
 	return 0;
 }
