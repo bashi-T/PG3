@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<Windows.h>
 
 int calc(int a, int b)
 {
@@ -28,6 +29,7 @@ char Min(char a, char b)
 
 int main()
 {
+	SetConsoleOutputCP(65001);
 	int resultInt = Min<int>(114, 514);
 	float resultFloat = Min<float>(114.0f, 51.4f);
 	double resultDouble = Min<double>(15.4f, 114.0f);
@@ -38,7 +40,7 @@ int main()
 	printf("%lf\n", resultDouble);
 	if(resultChar==NULL)
 	{
-		printf("数字以外は入力できません");
+		printf("数字以外を入力できません");
 	}
 
 	return 0;
