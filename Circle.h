@@ -1,7 +1,7 @@
 #pragma once
-#include"IShape.h"
 #include<stdio.h>
-#include<math.h>6
+#include"IShape.h"
+#include<math.h>
 #define M_PI 3.14159265358979;
 
 class Circle :public IShape
@@ -11,7 +11,7 @@ public:
 	void Draw() override;
 
 protected:
-	float radius;
+	float radius = 10.0f;
 	float size;
 };
 

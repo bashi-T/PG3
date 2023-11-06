@@ -3,9 +3,9 @@
 #include<time.h>
 #include<Windows.h>
 #include<functional>
-#include"IShape.h"
-#include"Circle.h"
-#include"Rectangle.h"
+#include "IShape.h"
+#include "Circle.h"
+#include "Rectangle.h"
 
 
 int main()
@@ -17,11 +17,12 @@ int main()
 	{
 		if (i < 1)
 		{
-			iShape[i] = new Circle;
+			iShape[i] = new Rectangle;
+
 		}
 		else
 		{
-			iShape[i] = new Rectangle;
+			iShape[i] = new Circle;
 		}
 
 		iShape[i]->Draw();

@@ -1,15 +1,15 @@
 #pragma once
-#include"IShape.h"
 #include<stdio.h>
+#include"IShape.h"
 
-class Rectangle :public IShape
+class Rectangle : public IShape
 {
 public:
 	void Size() override;
 	void Draw() override;
 
 protected:
-	float width;
-	float height;
+	float width = 10.0f;
+	float height = 8.0f;
 	float size;
 };
