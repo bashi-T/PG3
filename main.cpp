@@ -6,6 +6,7 @@
 #include "IShape.h"
 #include "Circle.h"
 #include "Rectangle.h"
+
 int main()
 {
 	SetConsoleOutputCP(65001);
@@ -19,7 +20,7 @@ int main()
 		}
 		else
 		{
-			//iShape[i] = new Rectangle;
+			iShape[i] = new Rectangle;
 		}
 	}
 

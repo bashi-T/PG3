@@ -1,8 +1,6 @@
 #pragma once
-#define USE_MATH_DEFINES
 #include<stdio.h>
 #include"IShape.h"
-#include<math.h>
 
 class Circle :public IShape
 {

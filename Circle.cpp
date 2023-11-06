@@ -2,10 +2,10 @@
 
 void Circle::Size()
 {
-	size = radius * radius * M_PI;
+	size = radius * radius * 3.1415926535;
 }
 
 void Circle::Draw()
 {
-	printf_s("%f\n",/*radius, */size);
+	printf("半径:%f,面積:%f\n",radius, size);
 }
