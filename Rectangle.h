@@ -1,7 +1,6 @@
 #pragma once
 #include"IShape.h"
 #include<stdio.h>
-#include<math.h>
 
 class Rectangle :public IShape
 {

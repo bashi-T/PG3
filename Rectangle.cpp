@@ -7,5 +7,5 @@ void Rectangle::Size()
 
 void Rectangle::Draw()
 {
-	printf("%f", size);
+	printf("縦:%f,横:%f,面積:%f\n", width, height, size);
 }

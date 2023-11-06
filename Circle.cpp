@@ -7,5 +7,5 @@ void Circle::Size()
 
 void Circle::Draw()
 {
-	printf("%f", size);
+	printf("半径:%f,面積:%f\n",radius, size);
 }
