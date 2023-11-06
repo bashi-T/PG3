@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 class IShape
 {
 public:
-	virtual void size() = 0;
-	virtual void draw() = 0;
+	virtual void Size() = 0;
+	virtual void Draw() = 0;
 };
 
