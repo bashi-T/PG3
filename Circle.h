@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include"IShape.h"
 #include<math.h>
-#define M_PI 3.14159265358979;
+#define M_PI 3.14159265358979
 
 class Circle :public IShape
 {
