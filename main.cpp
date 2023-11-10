@@ -3,17 +3,13 @@
 #include<time.h>
 #include<Windows.h>
 #include<functional>
+#include"Enemy.h"
 
-class Enemy
-{
-public:
-	void TestFunc();
-private:
-	void (Enemy::*pFunc)();
-};
 
 int main()
 {
+	Enemy* enemy = new Enemy;
+	enemy->Update();
 
 	return 0;
 }
