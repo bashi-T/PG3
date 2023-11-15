@@ -11,7 +11,8 @@ int Remainder(int a,int b)
 
 typedef void (*pFunc)(int*);
 
-void setTimeout(pFunc p, int second,int n)
+std::function<pFunc(pFunc,int, int)> SetTimeout =
+[](pFunc p, int second,int n)
 {
 	printf("結果は%d秒後\n",second);
 	Sleep(second * 1000);
@@ -36,7 +37,7 @@ int main()
 	scanf_s("%d", &number);
 
 	p = DispResult;
-	setTimeout(p, 3, DiceNumber);
+	SetTimeout(p, 3, DiceNumber);
 
 		switch (Remainder(DiceNumber,2))
 		{
