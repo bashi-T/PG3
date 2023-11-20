@@ -14,18 +14,19 @@ typedef void (*pFunc)(int*);
 std::function<void(pFunc, int, int)> SetTimeout =
 [&](pFunc p, int second, int n)
 {
-	printf("結果は%d秒後\n", second);
+	printf("結果は%d秒後　\n", second);
 	Sleep(second * 1000);
 	p(&n);
 };
 
 void DispResult(int *s)
 {
-	printf("出目:%d\n",*s);
+	printf("出目:%d　\n",*s);
 }
 
 int main()
 {
+	SetConsoleOutputCP(65001);
 	srand((unsigned int)time(NULL));
 	pFunc p;
 	int DiceNumber = rand() % 6 + 1;
@@ -33,7 +34,7 @@ int main()
 	std::function<int(int, int)> Remainder =
 		[](int a, int b) {	return a % b; };
 
-	printf("さいころの出目が丁なら0,半なら1を入力\n");
+	printf("さいころの出目予想・丁なら０、半なら１を入力　\n");
 	scanf_s("%d", &number);
 
 	p = DispResult;
@@ -42,25 +43,25 @@ int main()
 		switch (Remainder(DiceNumber,2))
 		{
 		case 0:
-			printf("正解は丁\n");
+			printf("正解は丁　\n");
 			if (number == 0)
 			{
-				printf("正解!\n");
+				printf("正解!　\n");
 			}
 			else
 			{
-				printf("不正解......\n");
+				printf("不正解......　\n");
 			}
 			break;
 		case 1:
-			printf("正解は半!\n");
+			printf("正解は半　\n");
 			if (number == 1)
 			{
-				printf("正解!\n");
+				printf("正解!　\n");
 			}
 			else
 			{
-				printf("不正解......\n");
+				printf("不正解......　\n");
 			}
 			break;
 		}
