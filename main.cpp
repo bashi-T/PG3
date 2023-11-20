@@ -11,13 +11,13 @@ int Remainder(int a,int b)
 
 typedef void (*pFunc)(int*);
 
-std::function<pFunc(pFunc,int, int)> SetTimeout =
-[](pFunc p, int second,int n)
+std::function<void(pFunc, int, int)> SetTimeout =
+[&](pFunc p, int second, int n)
 {
-	printf("結果は%d秒後\n",second);
+	printf("結果は%d秒後\n", second);
 	Sleep(second * 1000);
 	p(&n);
-}
+};
 
 void DispResult(int *s)
 {
