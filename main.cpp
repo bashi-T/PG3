@@ -8,7 +8,7 @@
 
 int main()
 {
-	std::list<const char*>lst
+	std::list<const char*>YamanoteLine
 	{
 		"Tokyo", "Yurakucho", "Shimbashi", "Hamamatucho",
 		"Tamachi", "Shinagawa", "Osaki", "Gotanda", "Meguro",
@@ -17,8 +17,8 @@ int main()
 		"Otuka", "Sugamo", "Komagome", "Tabata", "Nippori",
 		"Uguisudani", "Ueno", "Okachimachi", "Akibahara", "Kanda"
 	};
-
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+	std::cout << "1970年山手線" << "\n";
+	for (auto itr = YamanoteLine.begin(); itr != YamanoteLine.end(); ++itr) {
 		std::cout << *itr << "->";
 		if (*itr == "Kanda")
 		{
@@ -26,10 +26,11 @@ int main()
 		}
 	}
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+	std::cout << "2019年山手線" << "\n";
+	for (auto itr = YamanoteLine.begin(); itr != YamanoteLine.end(); ++itr) {
 		if (*itr == "Nippori")
 		{
-			itr = lst.insert(itr,"Nishi-Nippori");
+			itr = YamanoteLine.insert(itr,"Nishi-Nippori");
 			std::cout << *itr << "->";
 			++itr;
 		}
@@ -40,10 +41,11 @@ int main()
 		}
 	}
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+	std::cout << "2022年山手線" << "\n";
+	for (auto itr = YamanoteLine.begin(); itr != YamanoteLine.end(); ++itr) {
 		if (*itr == "Shinagawa")
 		{
-			itr = lst.insert(itr, "Takanawa Gateway");
+			itr = YamanoteLine.insert(itr, "Takanawa Gateway");
 			std::cout << *itr << "->";
 			++itr;
 		}
