@@ -1,41 +1,59 @@
 #pragma once
 #include<stdio.h>
 #include<stdlib.h>
-#include<time.h>
 #include<Windows.h>
 #include<functional>
-#include "Vehicle.h"
-#include "Car.h"
-#include "Ship.h"
-#include "Train.h"
-
+#include<list>
+#include<iostream>
 
 int main()
 {
-	Vehicle* vehicle[4];
+	std::list<const char*>lst
+	{
+		"Tokyo", "Yurakucho", "Shimbashi", "Hamamatucho",
+		"Tamachi", "Shinagawa", "Osaki", "Gotanda", "Meguro",
+		"Ebisu", "Shibuya", "Harajuku", "Yoyogi", "Shinjuku",
+		"Shin-Okubo", "takadanobaba", "mejiro", "Ikebukuro",
+		"Otuka", "Sugamo", "Komagome", "Tabata", "Nippori",
+		"Uguisudani", "Ueno", "Okachimachi", "Akibahara", "Kanda"
+	};
 
-	for (int i = 0; i < 3; i++) {
-		switch(i)
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		std::cout << *itr << "->";
+		if (*itr == "Kanda")
 		{
-		case 0:
-			vehicle[i] = new Car;
-			break;
-		case 1:
-			vehicle[i] = new Ship;
-			break;
-		case 2:
-			vehicle[i] = new Train;
-			break;
+			std::cout << "Tokyo\n\n";
 		}
 	}
 
-	for (int i = 0; i < 3; i++) {
-		vehicle[i]->Drive();
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		if (*itr == "Nippori")
+		{
+			itr = lst.insert(itr,"Nishi-Nippori");
+			std::cout << *itr << "->";
+			++itr;
+		}
+		std::cout << *itr << "->";
+		if (*itr == "Kanda")
+		{
+			std::cout << "Tokyo\n\n";
+		}
 	}
 
-	for (int i = 0; i < 3; i++) {
-		delete vehicle[i];
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		if (*itr == "Shinagawa")
+		{
+			itr = lst.insert(itr, "Takanawa Gateway");
+			std::cout << *itr << "->";
+			++itr;
+		}
+		std::cout << *itr << "->";
+		if (*itr == "Kanda")
+		{
+			std::cout << "Tokyo\n";
+		}
 	}
+
 
 	return 0;
 }

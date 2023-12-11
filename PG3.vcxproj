@@ -19,17 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Car.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Ship.cpp" />
-    <ClCompile Include="Train.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="Ship.h" />
-    <ClInclude Include="Train.h" />
-    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
