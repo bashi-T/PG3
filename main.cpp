@@ -10,7 +10,7 @@
 
 int main()
 {
-	std::list<const char*>studentAddress
+	std::vector<std::string>studentAddress
 	{
 		"k022g0108@g.neec.ac.jp",
 		"k022g0045@g.neec.ac.jp",
